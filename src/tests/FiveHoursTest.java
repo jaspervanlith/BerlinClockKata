@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-class FiveHoursTest extends BuildClock {
+class FiveHoursTest {
 
     @ParameterizedTest(name = "{index} => actual={0}, expected={1}")
     @CsvSource({
@@ -17,6 +17,6 @@ class FiveHoursTest extends BuildClock {
     })
 
     void fiveHourRequirements(String actual, String expected) {
-        Assertions.assertEquals(expected, fiveHoursRow(actual));
+        Assertions.assertEquals(expected, BuildClock.fiveHoursRow(actual));
     }
 }

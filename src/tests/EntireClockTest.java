@@ -6,7 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 
-public class EntireClockTest extends BuildClock{
+public class EntireClockTest{
 
     @ParameterizedTest(name = "{index} => actual={0}, expected={1}")
     @CsvSource({
@@ -17,6 +17,6 @@ public class EntireClockTest extends BuildClock{
     })
 
     void fiveHourRequirements(String actual, String expected) {
-        Assertions.assertEquals(expected, entireClock(actual));
+        Assertions.assertEquals(expected, BuildClock.entireClock(actual));
     }
 }
